@@ -53,6 +53,10 @@ importers:
       tailwindcss:
         specifier: ^3.4.3
         version: 3.4.3
+    devDependencies:
+      '@iconify-json/skill-icons':
+        specifier: ^1.1.9
+        version: 1.1.9
 
 packages:
 
@@ -403,6 +407,9 @@ packages:
 
   '@iconify-json/simple-icons@1.1.102':
     resolution: {integrity: sha512-ErRQGs7tjGsq4sj5SSeYwBOQ766yd9LtWblWakyL+ugg1k48ImabkI3mptDN5o+XSUb9SC+b7YNSStlrrecqNQ==}
+
+  '@iconify-json/skill-icons@1.1.9':
+    resolution: {integrity: sha512-LrFCXGGgfOJzWpcvbdH0i2FgTVN0+rhM+BIvAwCjTyfy72UnwP+pYViKSz952jXb+u1g2d7c+lRBwcybui1ZUQ==}
 
   '@iconify-json/uil@1.1.8':
     resolution: {integrity: sha512-zkWB8XImzb1gfi5kN9xAfDXF5OqzxbKvtZq9xRUplEWEJYOoDB1RpbbQpCwJQ41j8Nf0ag0LFJr++qhYmvxftQ==}
@@ -2956,6 +2963,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/simple-icons@1.1.102':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/skill-icons@1.1.9':
     dependencies:
       '@iconify/types': 2.0.0
 
