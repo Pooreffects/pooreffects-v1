@@ -5,7 +5,7 @@ Pooreffects is a hub for my digital garden, blog, and technology playground.
 ## TODOs
 
 - [x] Create a marquee and animate the skills icons in infinite loop
-- [ ] Create a theme toggle component
+- [x] Create a theme toggle component
 - [ ] Animate Featured Section Cards on Scroll
 - [ ] Create an intuitive Projects/Playground
 - [ ] Create Testimonials component and animate on Scroll
