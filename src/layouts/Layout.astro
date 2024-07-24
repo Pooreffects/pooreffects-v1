@@ -5,8 +5,6 @@ import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
 import '@fontsource-variable/bricolage-grotesque';
 
-
-
 export interface Props {
   title: string;
 }
@@ -21,8 +19,8 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with Tailwind CSS";
+  ? title + " | " + "Pooreffects"
+  : "Pooreffects - A hub for my digital garden, blog, and technology playground";
 ---
 
 <!DOCTYPE html>
@@ -33,40 +31,65 @@ const makeTitle = title
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      description="Pooreffects - A hub for my digital garden, blog, and technology playground"
       canonical={canonicalURL}
       twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
+        creator: "@pooreffects",
+        site: "@pooreffects",
         card: "summary_large_image",
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
+          title: `Pooreffects`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "Pooreffects Homepage Screenshot",
         },
       }}
     />
   </head>
-  <body>
-    <!-- TODO: Create a theme toggle component -->
-    <Navbar />
-    <slot />
-    <Footer />
-    <style is:global>
-      /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-      img {
-        content-visibility: auto;
-      }
-    </style>
-  </body>
+  <body class='bg-slate-200 dark:bg-slate-700'>
+      <Navbar />
+      <slot />
+      <Footer />
+      <style is:global>
+        /* Improve Page speed */
+        /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+        img {
+          content-visibility: auto;
+        }
+  
+      </style>
+    </body>
 </html>
+
+<script is:inline>
+  // Theme toggle functionality TODO: Look into the Astro Transitions feature
+document.addEventListener("DOMContentLoaded", () => {
+const themeToggleBtn = document.getElementById("theme-toggle");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+const currentTheme = localStorage.getItem("theme");
+
+if (currentTheme === "dark" || (!currentTheme && prefersDarkScheme.matches)) {
+document.documentElement.classList.add("dark");
+} else {
+document.documentElement.classList.remove("dark");
+}
+
+themeToggleBtn.addEventListener("click", () => {
+if (document.documentElement.classList.contains("dark")) {
+document.documentElement.classList.remove("dark");
+localStorage.setItem("theme", "light");
+} else {
+document.documentElement.classList.add("dark");
+localStorage.setItem("theme", "dark");
+}
+});
+});
+
+</script> 
