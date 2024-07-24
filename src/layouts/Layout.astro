@@ -4,6 +4,7 @@ import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
 import '@fontsource-variable/bricolage-grotesque';
+import { fade, ViewTransitions } from 'astro:transitions';
 
 export interface Props {
   title: string;
@@ -30,6 +31,7 @@ const makeTitle = title
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
 
     <SEO
       title={makeTitle}
@@ -53,7 +55,7 @@ const makeTitle = title
       }}
     />
   </head>
-  <body class='bg-indigo-100 dark:bg-indigo-900'>
+  <body class='bg-indigo-100 dark:bg-indigo-900' transition:animate={fade({ duration: '0.5s' })}>
       <Navbar />
       <slot />
       <Footer />
