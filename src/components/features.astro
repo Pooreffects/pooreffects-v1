@@ -37,25 +37,25 @@ const features = [
 ];
 ---
 
-<div class="mt-16 md:mt-0">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+<div class="mt-16 md:mt-0 transition-all">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-indigo-900 dark:text-pink-300">
     Turning Your Ideas into Intuitive web experiences
   </h2>
-  <p class="text-lg mt-4 text-slate-600">
+  <p class="text-lg mt-4 text-indigo-900 dark:text-indigo-100">
     Mohamed brings the arsenal to elevate your web presence with state-of-the-art development practices and performant solutions.
   </p>
 </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16 transition-all">
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+        <div class="mt-1 bg-teal-500 dark:bg-teal-500 rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white dark:text-indigo-100" name={item.icon} />
         </div>
         <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+          <h3 class="font-semibold text-lg text-indigo-900 dark:text-teal-500">{item.title}</h3>{" "}
+          <p class="text-slate-500 dark:text-indigo-200 mt-2 leading-relaxed">{item.description}</p>
         </div>
       </div>
     ))
