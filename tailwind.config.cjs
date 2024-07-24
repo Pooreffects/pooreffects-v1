@@ -5,6 +5,18 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      colors: {
+        indigo: {
+          100: "rgb(224 231 255)",
+          900: "rgb(49 46 129)",
+        },
+        teal: {
+          500: "rgb(20 184 166)",
+        },
+        pink: {
+          300: "rgb(249 168 212)",
+        },
+      },
       animation: {
         "loop-scroll": "loop-scroll 20s linear infinite",
       },
