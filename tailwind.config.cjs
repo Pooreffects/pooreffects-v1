@@ -5,6 +5,12 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      transitionTimingFunction: {
+        "pooreffects-ease": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+      },
+      transitionDuration: {
+        300: "300ms",
+      },
       colors: {
         indigo: {
           100: "rgb(224 231 255)",
