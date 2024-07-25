@@ -3,6 +3,8 @@ import Container from "@components/container.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
+/* Need to refactor */
+
 const menuitems = [
   {
     title: "Features",
@@ -34,7 +36,7 @@ const menuitems = [
 ---
 
 <Container>
-  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+  <header class="w-full fixed z-10 container px-4 flex flex-col lg:flex-row justify-between items-center">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
@@ -95,3 +97,26 @@ const menuitems = [
     </div>
   </header>
 </Container>
+
+<style >
+.header-scrolled {
+  background-color: #c7d2fe ;
+  opacity: 90%; 
+  transition: all 0.3s ease-in-out;
+  border-radius: 0 0 2rem 2rem;
+}
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('header');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 25) { 
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    });
+  });
+</script>
