@@ -1,15 +1,11 @@
 ---
-import {Fiber} from "@components/3D/Fiber"
-import { Picture } from "astro:assets";
-import heroImage from "assets/hero.png";
+import Scene from "@components/3D/Scene"
+/* import { Picture } from "astro:assets";
+import heroImage from "assets/hero.png"; */
+
 ---
 
-
-
-<main
-  class="hero grid lg:grid-cols-2 place-items-center md:pt-12 md:pb-24">
-  <div class="pt-32 pb-24 md:order-1 hidden md:block">
-    <!-- <Picture
+  <!-- <Picture
       src={heroImage}
       alt="Astronaut in the air"
       widths={[200, 400, 600]}
@@ -17,7 +13,11 @@ import heroImage from "assets/hero.png";
       loading="eager"
       format="avif"
     /> -->
-    <Fiber client:load />
+
+<main
+  class="hero grid lg:grid-cols-2 place-items-center md:pt-12 md:pb-24">
+  <div class="w-full pt-32 pb-24 md:order-1 hidden md:block">
+    <Scene client:load />
   </div>
   <div class='pt-32 pb-24'>
     <h1
@@ -27,27 +27,5 @@ import heroImage from "assets/hero.png";
     <p class="text-lg ml-4 mt-4 text-slate-600 max-w-xl dark:text-indigo-100">
       A Frontend-heavy Fullstack Developer, seasoning Web/Mobile user experiences. I'm passionate about MMA & Football and induldge in watching standup comedy and funny skits  
     </p>
-    <!-- <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
-        target="_blank"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
-
-         Download for Free
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-         GitHub Repo
-      </Link>
-    </div> -->
   </div>
 </main>
