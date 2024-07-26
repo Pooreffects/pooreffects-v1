@@ -1,26 +1,15 @@
-// Scene.tsx
-import React from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import Model from "./Model";
 
 const Scene: React.FC = () => {
   return (
     <div className="w-full h-80 items-center">
-      <Canvas>
-        {/* Lighting setup */}
-        <perspectiveCamera
-          position={[10, 10, 10]} // Adjust this vector to change camera position
-          fov={75}
-        />
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 5]} intensity={1} />
-
-        {/* Model */}
+      <Canvas style={{ width: "100%", height: "100%" }}>
+        <PerspectiveCamera makeDefault position={[15, 30, 65]} fov={75} />
         <Model url="/scene.gltf" />
-
-        {/* Camera controls */}
-        <OrbitControls />
+        <OrbitControls enableZoom={false} maxDistance={80} minDistance={80} />
+        <ambientLight intensity={1.7} color={"#f0fdfa"}/>
       </Canvas>
     </div>
   );
