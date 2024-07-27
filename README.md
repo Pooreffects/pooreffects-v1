@@ -97,6 +97,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [x] R3F + Drei to Animate the 3D Model
 - [x] Refactored and optimized the 3D Model for better performance
 - [x] Add Sparkles to the Scene => Refactor and enhance
+- [x] Create a basic CTA in the Hero
+- [ ] Change the logo to my Avatar
 - [ ] Create an intuitive Projects/Playground
 - [ ] Create Testimonials component and animate on Scroll
 

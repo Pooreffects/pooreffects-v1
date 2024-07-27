@@ -20,5 +20,7 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# bin files (except those in public directory)
-!public/**/*.bin
+# bin files
+*.bin
+.bin
+/public/*.bin
