@@ -9,23 +9,24 @@ const Scene: React.FC = () => {
 
   return (
     <div className="w-full h-full absolute">
-      <Canvas style={{ width: "100%", height: "100%" }}>
-        <PerspectiveCamera makeDefault position={[30, 40, 65]} fov={80} />
+      <Canvas style={{ width: "100%", height: "100%", display: "flex" }}>
+        <PerspectiveCamera makeDefault position={[10, 20, 40]} fov={14} />
         <ambientLight intensity={1.7} color={"#f0fdfa"} />
-        <Model ref={modelRef} url="/scene.gltf" />
-        <OrbitControls enableZoom={false} maxDistance={80} minDistance={80} />
-
+        <Model ref={modelRef} url="/scene.gltf" position={[0, -5, 0]} />
         <Sparkles
           count={4000}
-          size={15}
-          speed={0.05}
+          size={25}
+          speed={1}
           opacity={1}
           scale={200}
           color="#14b8a6"
         />
+        <OrbitControls enableZoom={false} maxDistance={80} minDistance={80} />
       </Canvas>
     </div>
   );
 };
 
 export default Scene;
+
+/* <PerspectiveCamera makeDefault position={[30, 40, 65]} fov={80} /> */
