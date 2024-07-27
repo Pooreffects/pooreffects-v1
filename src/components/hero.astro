@@ -4,16 +4,36 @@ import Scene from "@components/3D/Scene"
 
 <main
   class="hero w-full h-screen flex items-center justify-between pt-32">
-  <div class="w-full xl:h-2/3 lg:h-2/3 md:h-full  md:order-1 hidden md:block">
+  <div class="w-full xl:h-2/3 lg:h-2/3 md:h-full relative  md:order-1 hidden md:block">
     <Scene client:load />
   </div>
   <div>
     <h1
-      class="text-5xl lg:text-6xl xl:text-8xl font-bold lg:tracking-tight xl:tracking-tighter text-indigo-900 dark:text-pink-300 transition-all duration-300 ease-pooreffects-ease">
-      Mohamed Benabdellah
+      class="text-5xl  lg:text-6xl xl:text-8xl font-bold lg:tracking-tight xl:tracking-tighter text-indigo-900 dark:text-pink-300 ease-pooreffects-ease transition-all duration-300 ">
+      Mohamed <span class="fancy">Benabdellah</span>
     </h1>
     <p class="text-lg ml-4 mt-4 text-slate-600 max-w-xl dark:text-indigo-100">
       A Frontend-heavy Fullstack Developer, seasoning Web/Mobile user experiences. I'm passionate about MMA & Football and induldge in watching standup comedy and funny skits  
     </p>
   </div>
 </main>
+
+<style>
+  .fancy {
+    position: relative;
+    white-space: nowrap;
+    &:after {
+    --deco-height: 0.3125em;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(var(--deco-height) * -0.2);
+    height: var(--deco-height);
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%2314b8a6' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-size: auto 100%;
+    background-repeat: round;
+    background-position: 0em;
+  }
+  }
+</style>
