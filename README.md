@@ -100,7 +100,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [x] Create a basic CTA in the Hero
 - [ ] Change the logo to my Avatar
 - [ ] Create an intuitive Projects/Playground
-- [ ] Create Testimonials component and animate on Scroll
+- [ ] Rethink The User Stories and UX Flow using Excalidraw
+- [ ] Work on Blog
+- [ ] Create Testimonials
 
 ### Styling Enhancements TODOs
 
