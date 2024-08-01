@@ -1,12 +1,10 @@
 ---
 const { align = "center" } = Astro.props;
+
+const alignmentClass = align === "left" ? "text-left" :
+                      align === "right" ? "text-right" : "text-center";
 ---
 
-<div class:list={["mt-16", align === "center" && "text-center"]}>
-  <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    <slot name="title">Title</slot>
-  </h1>
-  <p class="text-lg mt-4 text-slate-600">
-    <slot name="desc">Some description goes here</slot>
-  </p>
-</div>
+  <div class={`py-6 flex flex-col justify-center items-center ${alignmentClass}`}>
+    
+  </div>

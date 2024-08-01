@@ -17,14 +17,7 @@ publishedBlogEntries.sort(function (a, b) {
 ---
 
 <Layout title="Blog">
-  <Container>
-    <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
-      <Fragment slot="desc">
-        We write about building startups and thoughts going on our mind.
-      </Fragment>
-    </Sectionhead>
-    <main class="mt-16">
+    <main class='py-32 bg-indigo-100 dark:bg-indigo-900 transition-all duration-300 ease-pooreffects-ease'>
       <ul class="grid gap-16 max-w-4xl mx-auto">
         {
           publishedBlogEntries.map((blogPostEntry, index) => (
@@ -69,5 +62,4 @@ publishedBlogEntries.sort(function (a, b) {
         }
       </ul>
     </main>
-  </Container>
 </Layout>
