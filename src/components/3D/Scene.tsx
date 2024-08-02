@@ -2,17 +2,14 @@ import { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Sparkles } from "@react-three/drei";
 import Model from "./Model";
-import { Group } from "three";
 
 const Scene: React.FC = () => {
-  const modelRef = useRef<Group>(null);
-
   return (
     <div className="w-full h-full absolute">
       <Canvas style={{ width: "100%", height: "100%", display: "flex" }}>
         <PerspectiveCamera makeDefault position={[10, 20, 40]} fov={1.8} />
         <ambientLight intensity={10} color={"#f0fdfa"} />
-        <Model ref={modelRef} url="/scene.gltf" position={[0, 0, 0]} />
+        <Model url="/scene.gltf" position={[0, 0, 0]} />
         <Sparkles
           count={4000}
           size={25}
