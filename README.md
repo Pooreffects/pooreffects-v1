@@ -98,6 +98,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [x] Refactored and optimized the 3D Model for better performance
 - [x] Add Sparkles to the Scene => Refactor and enhance
 - [x] Create a basic CTA in the Hero
+- [x] Create Contact Page, ContactForm
+- [x] Create Contact Form Email Functionality w/ Public API Key
+- [x] Display Spinner on Loading and Toast Message on Success
 - [ ] Change the logo to my Avatar
 - [ ] Create an intuitive Projects/Playground
 - [ ] Rethink The User Stories and UX Flow using Excalidraw
@@ -118,6 +121,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Accessibility and Performance-Related TODOs
 
+- [x] Memoization and Hydration of the 3D assets
 - [ ] Astro View Transitions and Initial Animations
 - [ ] Refactor and optimize the code for better performance
 
