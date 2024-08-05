@@ -9,6 +9,8 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Group } from "three";
 
+const modelCache = new Map();
+
 interface ModelProps {
   url: string;
   position?: [number, number, number];
@@ -17,8 +19,13 @@ interface ModelProps {
 const Model = React.memo(({ url, position = [0, 0, 0] }: ModelProps) => {
   const modelRef = useRef<Group>(null);
 
-  // Memoize the GLTF loader result to avoid reloading the model unless the URL changes
-  const gltf = useMemo(() => useLoader(GLTFLoader, url), [url]);
+  // Memoize and cache the GLTF loader result  to avoid reloading the model unless the URL changes
+  const gltf = useMemo(() => {
+    if (!modelCache.has(url)) {
+      modelCache.set(url, useLoader(GLTFLoader, url));
+    }
+    return modelCache.get(url);
+  }, [url]);
 
   const [rotationDirection, setRotationDirection] = useState(1); // 1 for clockwise, -1 for counter-clockwise
   const rotationLimit = 0.349; // 20 degrees in radians

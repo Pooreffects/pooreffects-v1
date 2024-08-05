@@ -55,56 +55,90 @@ const makeTitle = title
       }}
     />
   </head>
-  <body class='bg-indigo-100 dark:bg-indigo-900 transition-all duration-300 ease-pooreeffects-ease'>
-      <Navbar />
-      <slot />
-      <Footer />
-      <style is:global>
-        /* Improve Page speed */
-        /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-        img {
-          content-visibility: auto;
-        }
-      </style>
+  <body class="bg-indigo-100 dark:bg-indigo-900 transition-all duration-300 ease-pooreffects-ease">
+    <div class="noise absolute top-0 left-0 w-full h-full z-1 opacity-10"></div>
+    <div class="block fixed top-0 left-0 w-full h-full overflow-hidden bg-bg-dark z-[-1]">
+      <div class="absolute w-full h-full blur-[40px] filter-[url(#goo)]">
+        <!-- Shape 1 -->
+        <div class="absolute top-[20%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 
+                    w-[40%] h-[40%] rounded-full mix-blend-hard-light animate-move-vertical 
+                    bg-gradient-to-r from-teal-500 to-blue-500 
+                    dark:bg-gradient-to-r dark:from-pink-300 dark:to-indigo-200"></div>
+      
+        <!-- Shape 2 -->
+        <div class="absolute top-[50%] left-[80%] transform -translate-x-1/2 -translate-y-1/2 
+                    w-[30%] h-[30%] rounded-full mix-blend-hard-light animate-move-in-circle 
+                    bg-gradient-to-r from-teal-500 to-blue-500 
+                    dark:bg-gradient-to-r dark:from-pink-300 dark:to-indigo-200"></div>
+      
+        <!-- Shape 3 (Interactive) -->
+        <div class="absolute top-[70%] left-[40%] transform -translate-x-1/2 -translate-y-1/2 
+                    w-[50%] h-[50%] rounded-full mix-blend-hard-light animate-move-horizontal opacity-70 
+                    bg-gradient-to-r from-teal-500 to-blue-500 
+                    dark:bg-gradient-to-r dark:from-pink-300 dark:to-indigo-200 interactive"></div>
+      </div>
+      
+      
+    </div>
+    <Navbar />
+    <slot />
+    <Footer />
   </body>
 </html>
 
+
 <script is:inline>
-  // Function to get the theme from localStorage or system preference
-  const getTheme = () => {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-      return localStorage.getItem('theme');
-    }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  };
+  document.addEventListener('DOMContentLoaded', () => {
+    const interBubble = document.querySelector('.interactive');
+    let curX = 0;
+    let curY = 0;
+    let tgX = 0;
+    let tgY = 0;
 
-  // Function to apply the theme
-  const applyTheme = (theme) => {
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-    localStorage.setItem('theme', theme);
-  };
+    const move = () => {
+      curX += (tgX - curX) / 20;
+      curY += (tgY - curY) / 20;
+      interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+      requestAnimationFrame(move);
+    };
 
-  // Function to handle the theme toggle
-  const handleThemeToggle = () => {
-    const currentTheme = getTheme();
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    applyTheme(newTheme);
-  };
+    window.addEventListener('mousemove', (event) => {
+      tgX = event.clientX;
+      tgY = event.clientY;
+    });
 
-  // Function to update the theme and attach event listeners
-  const update = () => {
-    const theme = getTheme();
-    applyTheme(theme);
+    move();
 
-    const themeToggleBtn = document.getElementById("theme-toggle");
-    if (themeToggleBtn) {
-      themeToggleBtn.removeEventListener("click", handleThemeToggle); // Ensure no duplicate listeners
-      themeToggleBtn.addEventListener("click", handleThemeToggle);
-    }
-  };
+    const getTheme = () => {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
 
-  // Event listeners for initial load and page swaps
-  document.addEventListener("astro:after-swap", update);
-  document.addEventListener("DOMContentLoaded", update);
+    const applyTheme = (theme) => {
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+      localStorage.setItem('theme', theme);
+    };
+
+    const handleThemeToggle = () => {
+      const currentTheme = getTheme();
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme);
+    };
+
+    const update = () => {
+      const theme = getTheme();
+      applyTheme(theme);
+
+      const themeToggleBtn = document.getElementById("theme-toggle");
+      if (themeToggleBtn) {
+        themeToggleBtn.removeEventListener("click", handleThemeToggle);
+        themeToggleBtn.addEventListener("click", handleThemeToggle);
+      }
+    };
+
+    document.addEventListener("astro:after-swap", update);
+    update();
+  });
 </script>
-

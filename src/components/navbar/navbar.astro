@@ -34,7 +34,7 @@ const menuitems = [
 ];
 ---
 
-  <header class="header w-full fixed z-10 flex flex-col lg:flex-row justify-around items-center bg-indigo-100 dark:bg-indigo-900 transition-all duration-300 ease-pooreffects-ease">
+  <header class="header w-full fixed z-10 flex flex-col lg:flex-row justify-around items-center bg-transparent transition-all duration-300 ease-pooreffects-ease">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
@@ -97,10 +97,12 @@ const menuitems = [
 
 <style >
 .header-scrolled--light {
+  background-color: rgb(224 231 255);
   opacity: 90%; 
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 .header-scrolled--dark {
+  background-color: rgb(49 46 129);
   opacity: 90%; 
   box-shadow: rgba(49, 46, 129, 0.1) 0px 4px 6px -1px, rgba(49, 46, 129, 0.06) 0px 2px 4px -1px;
   }

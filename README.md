@@ -101,6 +101,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [x] Create Contact Page, ContactForm
 - [x] Create Contact Form Email Functionality w/ Public API Key
 - [x] Display Spinner on Loading and Toast Message on Success
+- [x] Enable Theme persistency across the app, optimize the Layout
+- [ ] Create an intuitive Projects Component
+- [ ] Create an Testimonials Component
 - [ ] Change the logo to my Avatar
 - [ ] Create an intuitive Projects/Playground
 - [ ] Rethink The User Stories and UX Flow using Excalidraw
@@ -114,6 +117,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] Probably change the logo to be my Avatar
 - [ ] Scroll animations in Frame/GSAP/Vanilla CSS
 - [ ] Animate Featured Section Cards on Scroll
+- [ ] Utilize ViewTransitions full features + prevent flashing
 
 ### Responsiveness and Cross-Platform Compatibility TODOs
 

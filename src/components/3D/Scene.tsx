@@ -1,21 +1,29 @@
-import { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Sparkles } from "@react-three/drei";
 import Model from "./Model";
+import { useMemo } from "react";
 
 const Scene: React.FC = () => {
+  const cameraProps = useMemo(
+    () => ({
+      position: [10, 20, 40] as [number, number, number],
+      fov: 1.8,
+      makeDefault: true,
+    }),
+    []
+  );
   return (
     <div className="w-full h-full absolute">
       <Canvas style={{ width: "100%", height: "100%", display: "flex" }}>
-        <PerspectiveCamera makeDefault position={[10, 20, 40]} fov={1.8} />
+        <PerspectiveCamera {...cameraProps} />
         <ambientLight intensity={10} color={"#f0fdfa"} />
         <Model url="/scene.gltf" position={[0, 0, 0]} />
         <Sparkles
-          count={4000}
-          size={25}
+          count={20}
+          size={40}
           speed={1}
           opacity={1}
-          scale={30}
+          scale={4}
           color="#14b8a6"
         />
         <OrbitControls enableZoom={false} maxDistance={80} minDistance={80} />
@@ -25,5 +33,3 @@ const Scene: React.FC = () => {
 };
 
 export default Scene;
-
-/* <PerspectiveCamera makeDefault position={[30, 40, 65]} fov={80} /> */
