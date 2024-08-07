@@ -12,12 +12,39 @@
   html::-webkit-scrollbar-thumb {
     background-color: theme("colors.indigo.900");
   }
+  .glass {
+    background: rgba(255, 255, 255, 0.23);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
 
+  .line-arrow {
+    filter: invert(60%) sepia(100%) saturate(300%) hue-rotate(100deg)
+      brightness(95%) contrast(85%);
+  }
+
+  /* Dark */
   html.dark::-webkit-scrollbar-track {
     background-color: theme("colors.indigo.900");
   }
   html.dark::-webkit-scrollbar-thumb {
     background-color: theme("colors.pink.300");
+  }
+  .dark .glass {
+    background: rgba(49, 46, 129, 0.52);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.6px);
+    -webkit-backdrop-filter: blur(4.6px);
+    border: 1px solid rgba(49, 46, 129, 0.09);
+  }
+
+  .dark .line-arrow {
+    filter: invert(70%) sepia(100%) saturate(500%) hue-rotate(300deg)
+      brightness(90%) contrast(90%);
   }
 }
 

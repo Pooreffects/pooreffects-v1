@@ -2,41 +2,85 @@
 import Contactform from "@components/contactform.astro";
 import Container from "@components/container.astro";
 import Layout from "@layouts/Layout.astro";
-import { Icon } from "astro-icon/components";
+import {Image} from 'astro:assets'
+import Whyconnect from '@assets/whyconnect.png'
 ---
 
 <Layout title="">
   <Container>
-    <main class='py-32 bg-transparent transition-all duration-300 ease-pooreffects-ease'>
-      <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-1">
-        <!-- Create Glassmorphism bg -->
-        <div class="bg-indigo-100 dark:bg-indigo-900 dark:bg-opacity-40 p-2 rounded-md">
-          <h2 class="font-medium text-3xl text-gray-800 dark:text-pink-300">Contact Pooreffects</h2>
-          <p class="text-xl leading-relaxed text-slate-500 dark:text-indigo-100 mt-3">
-            Got a quest/an idea? Let’s chat!</br> Fill out the form, drop me an email, or hit my line — I'm all ears and ready to help
-          </p>
-          <div class="mt-5">
-            <div class="flex items-center mt-2 space-x-2 text-gray-600">
-              <Icon class="text-gray-400 dark:text-teal-500 w-6 h-6" name="uil:map-marker" />
+    <section class="lg:py-40 sm:py-16 md:py-24">
+      <div class="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8 glass">
+          <div class="grid grid-cols-1 md:items-stretch md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-10">
+              <div class="flex flex-col justify-between lg:py-5">
+                  <div>
+                      <h2 class="text-3xl font-bold leading-tight text-indigo-900 dark:text-indigo-100 sm:text-4xl lg:leading-tight lg:text-5xl">It’s time to turn your goodies ideas into a digital reality!</h2>
+                      <p class="max-w-xl mx-auto mt-4 text-base leading-relaxed text-slate-700 dark:text-indigo-200">Got a quest/an idea? Let’s chat!</br> Fill out the form, drop me an email, or hit my line — <br/>I'm all ears and ready to help</p>
+  
+                      <svg class="relative z-10 max-w-xs mx-auto -mb-16 md:hidden stroke-teal-500 dark:stroke-pink-300" width="235" height="115" viewBox="0 0 235 115" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.8" d="M2 1C11.1143 29.7179 47.3229 84.021 119.243 71.4895C143.271 65.6154 142.443 41.7273 125.871 39.7692C109.3 37.8112 102.257 48.7762 104.329 60.1329C106.4 71.4895 127.529 100.077 234 113" class="stroke-current" stroke-width="4"/>
+                      </svg>
+                      
+                        
+                      <Image inferSize src="https://cdn.rareblocks.xyz/collection/celebration/images/contact/4/curve-line.svg" alt="" class="hidden w-full translate-x-24 translate-y-8 md:block"/>
+                  </div>
+  
+                  <div class="hidden md:mt-auto md:block">
+                      <div class="flex items-center">
+                          <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                              <path
+                                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                              />
+                          </svg>
+                          <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                              <path
+                                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                              />
+                          </svg>
+                          <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                              <path
+                                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                              />
+                          </svg>
+                          <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                              <path
+                                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                              />
+                          </svg>
+                          <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                              <path
+                                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                              />
+                          </svg>
+                      </div>
+  
+                      <blockquote class="mt-6">
+                          <p class="text-lg leading-relaxed text-slate-700 dark:text-indigo-100">Thanks for your expert consultancy! Your fast, user-friendly sites and chatbots have greatly boosted my business and local restaurants, simplifying updates and enhancing customer engagement. Your support has been key to our digital growth.</p>
+                      </blockquote>
+  
+                      <div class="flex items-center mt-8">
+                        <Image src={Whyconnect} width="40" height="40" class="flex-shrink-0 object-cover rounded-full" alt='Whyconnect logo' />
+                          <div class="ml-4">
+                              <p class="text-base font-semibold text-indigo-900 dark:text-indigo-100">James Thompson</p>
+                              <p class="mt-px text-sm text-slate-700 dark:text-indigo-300">CEO - Whyconnect</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="lg:pl-12 mt-32">
+                  <div class="overflow-hidden glass shadow-lg shadow-indigo-100 dark:shadow-pink-300 rounded-md">
+                      <div class="p-6 sm:p-10">
+                          <h3 class="text-3xl font-semibold text-indigo-900 dark:text-pink-300">Shoot me a message</h3>
+                          <p class="my-4 text-base text-slate-700 dark:text-indigo-100">Include a Subject in your mail so that I can get back to you quick!</p>
+                          <Contactform />
+                      </div>
+                  </div>
+              </div>
+  
 
-              <span class='text-gray-400 dark:text-indigo-300 '>Algiers, Algeria</span>
-            </div>
-            <div class="flex items-center mt-2 space-x-2 text-gray-600">
-              <Icon class="text-gray-400 dark:text-teal-500 w-6 h-6" name="uil:envelope" />
-
-              <a class='text-gray-400 dark:text-indigo-300 ' href="mailto:pooreffects.contact@gmail.com">pooreffects.contact@gmail.com</a>
-            </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-              <Icon class="text-gray-400 dark:text-teal-500 w-6 h-6" name="uil:phone" />
-
-              <a class='text-gray-400 dark:text-indigo-300 ' href="tel:(+213) 0541 5030 58">(+213) 0541 5030 58</a>
-            </div>
           </div>
-        </div>
-        <div>
-          <Contactform />
-        </div>
       </div>
-    </main>
-
+  </section>
+    
   </Container>
 </Layout>
