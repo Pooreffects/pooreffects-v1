@@ -6,18 +6,8 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
   {
-    title: "Features",
-    path: "#",
-    children: [
-      { title: "Action", path: "/" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-      { title: "404 Page", path: "/404" },
-    ],
-  },
-  {
-    title: "Pricing",
-    path: "/pricing",
+    title: "Playground",
+    path: "/playground",
   },
   {
     title: "About",
@@ -34,7 +24,7 @@ const menuitems = [
 ];
 ---
 
-  <header class="header w-full fixed z-10 flex flex-col lg:flex-row justify-around items-center bg-transparent transition-all ease-pooreffects-ease">
+  <header class="header w-full fixed z-10 flex flex-col lg:flex-row justify-around items-center bg-transparent ease-pooreffects-ease">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
@@ -48,32 +38,18 @@ const menuitems = [
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
         <ul class="flex flex-col lg:flex-row lg:gap-3">
-          {
-            menuitems.map((item, index) => (
-              <>
-                {item.children && (
-                  <Dropdown
-                    title={item.title}
-                    children={item.children}
-                    lastItem={index === menuitems.length - 1}
-                  />
-                )}
-
-                {!item.children && (
-                  <li>
-                    <a
-                      href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 dark:text-indigo-100 hover:dark:text-teal-500 hover:text-indigo-900 hover:font-semibold transition-all duration-300 ease-pooreffects-ease">
-                      <span> {item.title}</span>
-                    </a>
-                  </li>
-                )}
-              </>
-            ))
-          }
+          {menuitems.map((item) => (
+            <li>
+              <a
+                href={item.path}
+                class="flex lg:px-3 py-2 items-center text-gray-600 dark:text-indigo-100 hover:dark:text-teal-500 hover:text-indigo-900 hover:font-semibold transition-all duration-300 ease-pooreffects-ease">
+                <span>{item.title}</span>
+              </a>
+            </li>
+          ))}
         </ul>
-
       </MenuItems>
+      
     </Astronav>
     <div>
       <button id="theme-toggle" class="p-2 m-4 outline-none ring-0 dark:bg-transparent dark:border-none bg-transparent border-none">

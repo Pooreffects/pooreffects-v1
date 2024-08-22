@@ -28,12 +28,13 @@ const icons = [
   <div class="relative w-full mt-10">
     <div class="marquee-container">
       <div class="marquee flex">
-        {icons.concat(icons).map((icon, index) => (
-          <span class="flex-shrink-0" key={index} role="img" aria-label={icon}>
+        {icons.concat(icons).map((icon) => (
+          <span class="flex-shrink-0" role="img" aria-label={icon}>
             <Icon class="size-16" name={`skill-icons:${icon}`} />
           </span>
         ))}
       </div>
+      
     </div>
   </div>
 </section>
