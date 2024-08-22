@@ -30,8 +30,13 @@ module.exports = {
         "move-in-circle": "moveInCircle 20s ease infinite",
         "move-vertical": "moveVertical 30s ease infinite",
         "move-horizontal": "moveHorizontal 40s ease infinite",
+        "animate-marquee": "marquee 20s linear infinite",
       },
       keyframes: {
+        marquee: {
+          from: { transform: "translateX(100%)" },
+          to: { transform: "translateX(100%" },
+        },
         "loop-scroll": {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-50%)" },
