@@ -6,6 +6,15 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem",
+          sm: "1.5rem",
+          lg: "2rem",
+          xl: "4rem",
+        },
+      },
       colors: {
         indigo: {
           100: "#e0e7ff",
@@ -35,7 +44,7 @@ module.exports = {
       keyframes: {
         marquee: {
           from: { transform: "translateX(100%)" },
-          to: { transform: "translateX(100%" },
+          to: { transform: "translateX(100%)" },
         },
         "loop-scroll": {
           from: { transform: "translateX(0)" },
@@ -61,8 +70,47 @@ module.exports = {
           "Inter",
           ...defaultTheme.fontFamily.sans,
         ],
+        xs: ["0.75rem", { lineHeight: "1rem" }],
+        sm: ["0.875rem", { lineHeight: "1.25rem" }],
+        base: ["1rem", { lineHeight: "1.5rem" }],
+        lg: ["1.125rem", { lineHeight: "1.75rem" }],
+        xl: ["1.25rem", { lineHeight: "1.75rem" }],
+      },
+
+      screens: {
+        sm: "640px", // Default small screens (mobile)
+        md: "768px", // Medium screens (tablets)
+        lg: "1024px", // Large screens (laptops)
+        xl: "1280px", // Extra-large screens (desktops)
+        "2xl": "1536px", // Very large screens
+        xxl: "1600px", // Custom large screens
+        xs: "475px", // Extra small devices
+      },
+      container: {
+        center: true,
+        padding: "2rem",
+        screens: {
+          sm: "100%",
+          md: "750px",
+          lg: "900px",
+          xl: "1100px",
+          "2xl": "1200px",
+        },
+      },
+      lineHeight: {
+        extraLoose: "2.25",
+      },
+      letterSpacing: {
+        tight: "-0.02em",
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
+  corePlugins: {
+    preflight: true,
+  },
 };
