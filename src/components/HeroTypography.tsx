@@ -21,7 +21,7 @@ const itemVariants = {
 
 const HeroTypography = () => {
   return (
-    <div className="flex flex-col justify-center max-w-2xl space-y-10 text-center md:text-left">
+    <div className="flex flex-col justify-center max-w-2xl space-y-14 text-center md:text-left">
       {/* Brand Name */}
       <TextReveal
         tag="h1"
