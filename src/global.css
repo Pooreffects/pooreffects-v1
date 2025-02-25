@@ -112,3 +112,12 @@ select {
   background-repeat: round;
   background-position: 0em;
 }
+
+/* Hide scrollbar for WebKit (Chrome, Safari) */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for Firefox */
+.scrollbar-none {
+  scrollbar-width: none;
+}

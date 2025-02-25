@@ -4,16 +4,21 @@ import Cta from "@components/cta.astro";
 import Features from "@components/features.astro";
 import Hero from "@components/hero.astro";
 import Logos from "@components/logos.astro";
+import Works from '@components/portfolio/Works';
 import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="" >
   <Container >
     <Hero />
+  </Container>
+  <Works client:load />
     <Features />
     <Logos />
     <!-- TODO: Create Testimonials component -->
     <Cta />
-  </Container>
+  
 </Layout>
+
+
 
