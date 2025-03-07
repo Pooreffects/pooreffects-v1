@@ -57,35 +57,32 @@ const makeTitle = title
     />
 
   </head>
-  <body class=" bg-indigo-100 dark:bg-indigo-900 transition-all ease-pooreffects-ease">
+  <body class="bg-indigo-100 dark:bg-indigo-900 transition-all ease-pooreffects-ease">
     
-    <div class="noise absolute top-0 left-0 w-full h-full z-1 opacity-10"></div>
+    <div class="noise absolute top-0 left-0 w-full h-full z-1 opacity-100"></div>
     <div class="block fixed top-0 left-0 w-full h-full overflow-hidden bg-bg-dark z-[-1]">
-      <div class="absolute w-full h-full blur-[40px] filter-[url(#goo)]">
+      <div class="absolute w-full h-full blur-[60px] filter-[url(#goo)] opacity-60">
         <div class="absolute top-[20%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 
                     w-[40%] h-[40%] rounded-full mix-blend-hard-light animate-move-vertical 
                     bg-gradient-to-r from-teal-500 to-blue-500 
-                    dark:bg-gradient-to-r dark:from-pink-300 dark:to-indigo-200"></div>
+                    dark:bg-gradient-to-r dark:from-pink-300 dark:to-indigo-200 opacity-60"></div>
       
         <div class="absolute top-[50%] left-[80%] transform -translate-x-1/2 -translate-y-1/2 
                     w-[30%] h-[30%] rounded-full mix-blend-hard-light animate-move-in-circle 
                     bg-gradient-to-r from-teal-500 to-blue-500 
-                    dark:bg-gradient-to-r dark:from-pink-300 dark:to-indigo-200"></div>
+                    dark:bg-gradient-to-r dark:from-pink-300 dark:to-indigo-200 opacity-60"></div>
       
         <div class="absolute top-[70%] left-[40%] transform -translate-x-1/2 -translate-y-1/2 
-                    w-[50%] h-[50%] rounded-full mix-blend-hard-light animate-move-horizontal opacity-70 
+                    w-[50%] h-[50%] rounded-full mix-blend-hard-light animate-move-horizontal opacity-60 
                     bg-gradient-to-r from-teal-500 to-blue-500 
                     dark:bg-gradient-to-r dark:from-pink-300 dark:to-indigo-200 interactive"></div>
-      </div>
-      
-      
+      </div>     
     </div>
     <Navbar />
     <slot />
     <Footer />
   </body>
 </html>
-
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {

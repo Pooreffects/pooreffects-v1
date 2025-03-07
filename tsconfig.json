@@ -3,10 +3,11 @@
   "compilerOptions": {
     "baseUrl": "src",
     "strictNullChecks": true,
-    "types": ["astro/client", "three", "@types/three"],
+    "types": ["astro/client", "three", "@types/three", "@astrojs/ts-plugin"],
     "paths": {
       "@lib/*": ["lib/*"],
       "@utils/*": ["utils/*"],
+      "@hooks/*": ["hooks/*"],
       "@components/*": ["components/*"],
       "@interfaces/*": ["interfaces/*"],
       "@layouts/*": ["layouts/*"],

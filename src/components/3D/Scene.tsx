@@ -13,22 +13,20 @@ const Scene: React.FC = () => {
     []
   );
   return (
-    <div className="w-full h-full absolute">
-      <Canvas style={{ width: "100%", height: "100%", display: "flex" }}>
-        <PerspectiveCamera {...cameraProps} />
-        <ambientLight intensity={10} color={"#f0fdfa"} />
-        <Model url="/scene.gltf" position={[0, 0, 0]} />
-        <Sparkles
-          count={20}
-          size={40}
-          speed={1}
-          opacity={1}
-          scale={4}
-          color="#14b8a6"
-        />
-        <OrbitControls enableZoom={false} maxDistance={80} minDistance={80} />
-      </Canvas>
-    </div>
+    <Canvas style={{ width: "100%", height: "100%", display: "flex" }}>
+      <PerspectiveCamera {...cameraProps} />
+      <ambientLight intensity={10} color={"#f0fdfa"} />
+      <Model url="/scene.gltf" position={[0, 0, 0]} />
+      <Sparkles
+        count={20}
+        size={40}
+        speed={1}
+        opacity={1}
+        scale={4}
+        color="#14b8a6"
+      />
+      <OrbitControls enableZoom={false} maxDistance={80} minDistance={80} />
+    </Canvas>
   );
 };
 

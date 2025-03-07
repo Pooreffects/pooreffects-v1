@@ -9,8 +9,24 @@ import HeroTypography from "@components/HeroTypography";
     <HeroTypography client:visible />
   </section>
 
-  <!-- Right Section (3D Scene) -->
-  <div class="relative w-full md:w-1/2 xl:h-2/3 lg:h-2/3 md:h-full">
-    <Scene client:idle />
+  <!-- Right Section (3D Scene without Observer) -->
+  <div
+    class="relative w-full md:w-1/2 xl:h-2/3 lg:h-2/3 md:h-full will-change-transform"
+    style="contain: layout paint size"
+    aria-hidden="true">
+    <Scene client:load />
   </div>
 </main>
+
+<style>
+.hero {
+  contain: layout paint size;
+  perspective: 1000px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    animation: none !important;
+  }
+}
+</style>

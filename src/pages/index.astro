@@ -10,9 +10,9 @@ import Layout from "@layouts/Layout.astro";
 
 <Layout title="" >
   <Container >
-    <Hero />
+    <Hero client:load  />
   </Container>
-  <Works client:load />
+  <Works client:visible />
     <Features />
     <Logos />
     <!-- TODO: Create Testimonials component -->

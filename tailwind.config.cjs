@@ -40,6 +40,7 @@ module.exports = {
         "move-vertical": "moveVertical 30s ease infinite",
         "move-horizontal": "moveHorizontal 40s ease infinite",
         "animate-marquee": "marquee 20s linear infinite",
+        "spin-slow": "spin 10s linear infinite",
       },
       keyframes: {
         marquee: {
@@ -76,15 +77,14 @@ module.exports = {
         lg: ["1.125rem", { lineHeight: "1.75rem" }],
         xl: ["1.25rem", { lineHeight: "1.75rem" }],
       },
-
       screens: {
-        sm: "640px", // Default small screens (mobile)
-        md: "768px", // Medium screens (tablets)
-        lg: "1024px", // Large screens (laptops)
-        xl: "1280px", // Extra-large screens (desktops)
-        "2xl": "1536px", // Very large screens
-        xxl: "1600px", // Custom large screens
-        xs: "475px", // Extra small devices
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+        xxl: "1600px",
+        xs: "475px",
       },
       container: {
         center: true,
@@ -109,6 +109,18 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
     require("@tailwindcss/aspect-ratio"),
+    function ({ addComponents }) {
+      addComponents({
+        ".primary-btn": {
+          "@apply bg-indigo-800 text-white border-2 border-transparent hover:bg-teal-700 dark:bg-teal-700 dark:hover:bg-teal-600 transition-all ease-in-out":
+            {},
+        },
+        ".sec-btn": {
+          "@apply text-gray-900 dark:text-gray-200 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300":
+            {},
+        },
+      });
+    },
   ],
   corePlugins: {
     preflight: true,
